@@ -1,0 +1,450 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #EBEBEB;
+}
+
+.main {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(75, 75, 75, 0.75);
+          box-shadow: 0px 1px 2px 0px rgba(75, 75, 75, 0.75);
+  margin: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .main {
+    margin: 0;
+    border-radius: unset;
+  }
+}
+
+.main__header {
+  margin-left: 30px;
+  padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .main__header {
+    margin-left: 5px;
+    padding-top: 10px;
+  }
+}
+
+.main__title {
+  font-weight: 600;
+  font-size: 26px;
+  color: #3E3E3E;
+}
+
+@media only screen and (max-width: 767px) {
+  .main__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.main__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media only screen and (max-width: 767px) {
+  .main__section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.tabs {
+  width: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 20px;
+  position: relative;
+}
+
+@media only screen and (max-width: 767px) {
+  .tabs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .tabs::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.tabs__tab {
+  margin-left: 20px;
+  padding-left: 20px;
+  color: #707070;
+  font-size: 18px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 50px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .tabs__tab {
+    text-overflow: unset;
+    overflow: unset;
+    margin-left: 0;
+    border-bottom: 2px solid #EBEBEB;
+  }
+}
+
+.tabs__tab--active {
+  background-color: #EEF7FE;
+  color: #1E4AB6;
+}
+
+@media only screen and (max-width: 767px) {
+  .tabs__tab--active {
+    display: block;
+    border-bottom: 2px solid #1E4AB6;
+    background-color: transparent;
+    color: #3E3E3E;
+  }
+}
+
+.tabs__tab--active::before {
+  left: 0px;
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 55px;
+  background-color: #1E4AB6;
+  border-radius: 0 4px 4px 0;
+  margin-top: -12px;
+}
+
+@media only screen and (max-width: 767px) {
+  .tabs__tab--active::before {
+    display: none;
+  }
+}
+
+.products {
+  width: calc(100% - 260px);
+  position: relative;
+}
+
+@media only screen and (max-width: 767px) {
+  .products {
+    width: 100%;
+  }
+}
+
+.products::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.products__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-x: scroll;
+}
+
+@media only screen and (max-width: 767px) {
+  .products__list {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.products__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.products__button {
+  position: absolute;
+  height: auto;
+  cursor: pointer;
+  background-color: transparent;
+  top: 50px;
+  padding: 0;
+  width: 40px;
+  height: 80px;
+  background-color: white;
+  border: 1px solid #707070;
+  border-left: none;
+}
+
+.products__button--disabled {
+  opacity: 0.3;
+}
+
+@media only screen and (max-width: 767px) {
+  .products__button {
+    display: none;
+  }
+}
+
+.products__button--prev {
+  left: 0px;
+  border-bottom-right-radius: 80px;
+  border-top-right-radius: 80px;
+  border-color: #EBEBEB;
+  border-right: none;
+}
+
+.products__button--next {
+  right: 0px;
+  border-bottom-left-radius: 80px;
+  border-top-left-radius: 80px;
+  border-color: #EBEBEB;
+  border-left: none;
+}
+
+.products__button-img {
+  color: #707070;
+  width: 20px;
+}
+
+.card {
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #EBEBEB;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+  /*  position: relative; */
+}
+
+.card:hover .card__button {
+  visibility: visible;
+}
+
+.card--last {
+  margin-right: 0;
+}
+
+.card__img {
+  width: 200px;
+  height: 200px;
+}
+
+@media only screen and (max-width: 767px) {
+  .card__img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.card__name {
+  font-size: 16px;
+  color: #3E3E3E;
+  font-weight: 500;
+  height: 42px;
+  padding: 0 10px 0 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card__price {
+  color: #3E3E3E;
+  background-color: #EBEBEB;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.card__cargo {
+  margin-top: 10px;
+  padding: 0 10px 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .card__cargo {
+    padding: 0;
+  }
+}
+
+.card__cargo-img {
+  width: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .card__cargo-img {
+    display: none;
+  }
+}
+
+.card__cargo-text {
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .card__cargo-text {
+    margin-left: 0;
+  }
+  .card__cargo-text::before {
+    margin-right: 5px;
+    content: "\A";
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background: #707070;
+    display: inline-block;
+  }
+}
+
+.card__button {
+  color: #FFFFFF;
+  background-color: #2A5EF0;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+  .card__button {
+    visibility: visible;
+  }
+}
+
+.popup {
+  background-color: #222931;
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  width: 450px;
+  border-radius: 10px;
+  display: none;
+}
+
+.popup__active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popup__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup__svg {
+  width: 20px;
+  cursor: pointer;
+}
+
+.popup__text {
+  margin-left: 20px;
+}
+
+.popup__info {
+  color: white;
+  font-size: 18px;
+}
+
+.popup__link {
+  text-decoration: none;
+  color: #7e47ff;
+  font-size: 16px;
+}
+/*# sourceMappingURL=main.css.map */

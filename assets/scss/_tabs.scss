@@ -1,0 +1,68 @@
+.tabs{
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    position: relative;
+
+    @include mq(tablet, max) {
+        flex-direction: row;
+        width: 100%;
+        overflow-x: scroll;
+        &::-webkit-scrollbar{
+        width: 0;
+    }
+    }
+
+    &__tab{
+        margin-left: 20px;
+        padding-left: 20px;
+        color: $tab-color;
+        font-size: 18px;
+        font-weight: 400;
+        text-overflow: ellipsis;
+        overflow: hidden; 
+        white-space: nowrap;
+        height: 50px;
+        cursor: pointer;
+        padding: 10px;
+
+        @include mq(tablet, max) {
+            text-overflow: unset;
+            overflow: unset;
+            margin-left: 0; 
+            border-bottom: 2px solid $light-gray;
+        }
+
+        &--active{
+            background-color: $tab-bgcolor-hover;
+            color: $tab-color-hover;
+
+            @include mq(tablet, max) {
+                    display: block;
+                    border-bottom: 2px solid $tab-color-hover;
+                    background-color: transparent;
+                    color: $tab-color-resp;
+                }
+          
+            &::before {
+
+                left: 0px;
+                position: absolute;
+                content: "";
+                width: 6px;
+                height: 55px;
+                background-color:$tab-color-hover;
+                border-radius: 0 4px 4px 0;
+                margin-top: -12px;
+
+                @include mq(tablet, max) {
+                    display: none;
+                }
+               
+            }
+        }
+    }
+
+
+}

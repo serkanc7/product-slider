@@ -1,0 +1,44 @@
+.popup{
+    background-color: $popup-bgcolor;
+    position: fixed;
+    right:5px ;
+    bottom: 5px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px;
+    width: 450px;
+    border-radius: 10px;
+    display: none;
+
+    &__active{
+        display: flex;
+    }
+
+    &__inner{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__svg{
+        width: 20px;
+        cursor: pointer;
+    }
+
+    &__text{
+        margin-left: 20px;
+    }
+
+    &__info {
+        color: white;
+        font-size: 18px;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: $popup-link-color;
+        font-size: 16px;
+    }
+}
