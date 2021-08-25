@@ -258,7 +258,6 @@ html, body {
   padding: 5px;
   margin-right: 10px;
   border-radius: 10px;
-  /*  position: relative; */
 }
 
 .card:hover .card__button {
@@ -267,6 +266,20 @@ html, body {
 
 .card--last {
   margin-right: 0;
+}
+
+.card__footer {
+  height: 123px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .card__img {

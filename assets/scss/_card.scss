@@ -15,7 +15,14 @@
     &--last{
         margin-right: 0;
     }
-   /*  position: relative; */
+    
+
+    &__footer{
+        height: 123px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
     &__img{
         width: 200px;
